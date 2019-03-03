@@ -1,5 +1,10 @@
 import random
 
+
+def description_of_user_hand_cards(userHand):
+    pass
+
+
 def draw_cards(gameDeck, userNoOfCards): #draw cards will draw as many cards aas userNoOfcards parameter holds.
     # it will return whats not drawn
     userHand = []
@@ -38,6 +43,25 @@ def shuffle_cards(gameDeck): #this def is needed because there might be more shu
 def get_numbers_of_cards():
     return [1,2,3,4,5,6,7,8,9,10,11,12,13,15,16] # card no 14 is to strong to play with
 
+
+def load_cards():
+    return [{1:"this is card 1"},
+        {2:"this is card 2"},
+        {3: "this is card 3"},
+        {4: "this is card 4"},
+        {5: "this is card 5"},
+        {6: "this is card 6"},
+        {7: "this is card 7"},
+        {8: "this is card 8"},
+        {9: "this is card 9"},
+        {10: "this is card 10"},
+        {11: "this is card 11"},
+        {12: "this is card 12"},
+        {13: "this is card 13"},
+        {14: "this is card 14"},
+        {15: "this is card 15"},
+        {16: "this is card 16"}]
+
 def make_deck():
     cardNumbers = get_numbers_of_cards() # returns a list of playable cards
     return cardNumbers
@@ -46,6 +70,7 @@ def main():
 
 
     gameDeck = make_deck()
+    cardDescriptions = load_cards()
     gameDeck = shuffle_cards(gameDeck)
     print ("Shuffled deck is {}" .format(gameDeck))
     userNoOfCards = no_of_drawn_cards()
@@ -53,6 +78,8 @@ def main():
     userHand, gameDeck = draw_cards(gameDeck, userNoOfCards)
     print("After drawing cards user hand holds {}" .format(userHand))
     print("After drawing cards {} cards remain in deck " .format(gameDeck))
+
+    description_of_user_hand_cards(userHand)
 
 
 
