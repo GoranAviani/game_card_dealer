@@ -1,8 +1,15 @@
 import random
 
+def findDesc(x, cardDescriptions):
+    for description in cardDescriptions:
+        if description["cardNo"] == x:
+            print(description["cardDesc"])
+            break
 
 def description_of_user_hand_cards(userHand):
-    pass
+    cardDescriptions = load_cards()
+    for x in userHand:
+        findDesc(x, cardDescriptions)
 
 
 def draw_cards(gameDeck, userNoOfCards): #draw cards will draw as many cards aas userNoOfcards parameter holds.
@@ -45,22 +52,25 @@ def get_numbers_of_cards():
 
 
 def load_cards():
-    return [{1:"this is card 1"},
-        {2:"this is card 2"},
-        {3: "this is card 3"},
-        {4: "this is card 4"},
-        {5: "this is card 5"},
-        {6: "this is card 6"},
-        {7: "this is card 7"},
-        {8: "this is card 8"},
-        {9: "this is card 9"},
-        {10: "this is card 10"},
-        {11: "this is card 11"},
-        {12: "this is card 12"},
-        {13: "this is card 13"},
-        {14: "this is card 14"},
-        {15: "this is card 15"},
-        {16: "this is card 16"}]
+    return [
+        {"cardNo" :16, "cardDesc" : "this is card 16"},
+        {"cardNo" :1, "cardDesc" : "this is card 1"},
+        {"cardNo" :2, "cardDesc" : "this is card 2"},
+        {"cardNo" :3, "cardDesc" : "this is card 3"},
+        {"cardNo" :4, "cardDesc" : "this is card 4"},
+        {"cardNo" :5, "cardDesc" : "this is card 5"},
+        {"cardNo" :6, "cardDesc" : "this is card 6"},
+        {"cardNo" :7, "cardDesc" : "this is card 7"},
+        {"cardNo" :8, "cardDesc" : "this is card 8"},
+        {"cardNo" :9, "cardDesc" : "this is card 9"},
+        {"cardNo" :10, "cardDesc" : "this is card 10"},
+        {"cardNo" :11, "cardDesc" : "this is card 11"},
+        {"cardNo" :12, "cardDesc" : "this is card 12"},
+        {"cardNo" :13, "cardDesc" : "this is card 13"},
+        {"cardNo" :14, "cardDesc" : "this is card 14"},
+        {"cardNo" :15, "cardDesc" : "this is card 15"}
+]
+
 
 def make_deck():
     cardNumbers = get_numbers_of_cards() # returns a list of playable cards
@@ -70,7 +80,6 @@ def main():
 
 
     gameDeck = make_deck()
-    cardDescriptions = load_cards()
     gameDeck = shuffle_cards(gameDeck)
     print ("Shuffled deck is {}" .format(gameDeck))
     userNoOfCards = no_of_drawn_cards()
