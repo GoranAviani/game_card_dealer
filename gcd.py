@@ -1,6 +1,7 @@
 import random
 
-def draw_cards(gameDeck, userNoOfCards):
+def draw_cards(gameDeck, userNoOfCards): #draw cards will draw as many cards aas userNoOfcards parameter holds.
+    # it will return whats not drawn
     userHand = []
     for x in range(0, userNoOfCards):
         userHand.append(gameDeck.pop())
@@ -46,12 +47,12 @@ def main():
 
     gameDeck = make_deck()
     gameDeck = shuffle_cards(gameDeck)
-    print (gameDeck)
+    print ("Shuffled deck is {}" .format(gameDeck))
     userNoOfCards = no_of_drawn_cards()
-    print (userNoOfCards)
+    print ("User has picked {} cards to draw" .format(userNoOfCards))
     userHand, gameDeck = draw_cards(gameDeck, userNoOfCards)
-    print(userHand)
-    print(gameDeck)
+    print("After drawing cards user hand holds {}" .format(userHand))
+    print("After drawing cards {} cards remain in deck " .format(gameDeck))
 
 
 
