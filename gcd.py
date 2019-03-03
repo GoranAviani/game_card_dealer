@@ -1,5 +1,12 @@
 import random
 
+def draw_cards(gameDeck, userNoOfCards):
+    userHand = []
+    for x in range(0, userNoOfCards):
+        userHand.append(gameDeck.pop())
+    return userHand, gameDeck
+
+
 def no_of_drawn_cards():
     canDraw = [5,6,7]
     userAnswer = None
@@ -39,10 +46,14 @@ def main():
 
     gameDeck = make_deck()
     gameDeck = shuffle_cards(gameDeck)
-    userNoOfCards = no_of_drawn_cards()
-
-
     print (gameDeck)
+    userNoOfCards = no_of_drawn_cards()
+    print (userNoOfCards)
+    userHand, gameDeck = draw_cards(gameDeck, userNoOfCards)
+    print(userHand)
+    print(gameDeck)
+
+
 
 if __name__ == "__main__":
     main()
