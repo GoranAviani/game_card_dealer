@@ -1,5 +1,13 @@
 import random
 
+def no_of_drawn_cards():
+    canDraw = [5,6,7]
+    userAnswer = None
+    while userAnswer not in canDraw:
+        userAnswer = input("How many cards do you want to draw: 6 or 7?")
+        userAnswer = int(userAnswer)
+
+    return userAnswer
 
 def shuffle_cards(gameDeck): #this def is needed because there might be more shufflinf down the line
     print(gameDeck)
@@ -22,6 +30,9 @@ def main():
 
     gameDeck = make_deck()
     gameDeck = shuffle_cards(gameDeck)
+    userNoOfCards = no_of_drawn_cards()
+
+
     print (gameDeck)
 
 if __name__ == "__main__":
