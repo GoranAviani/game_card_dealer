@@ -3,8 +3,17 @@ import random
 def no_of_drawn_cards():
     canDraw = [5,6,7]
     userAnswer = None
+    firstTimeAsked = 0
     while userAnswer not in canDraw:
-        userAnswer = input("How many cards do you want to draw: 6 or 7?")
+        if firstTimeAsked == 0:
+            firstTimeAsked = 1
+        else:
+            print("\n")
+            print("That is not 5,6 or 7. Try again")
+            print("\n")
+
+
+        userAnswer = input("How many cards do you want to draw: 5, 6 or 7?")
         userAnswer = int(userAnswer)
 
     return userAnswer
