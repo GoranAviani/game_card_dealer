@@ -1,6 +1,6 @@
-Ok so this weekend there is a bundle on Humble bundle that has TCG cards, icons and
+Ok, so this weekend there is a bundle on Humble bundle that has TCG cards, icons and
 many other images one could use in building its own trading card game.
-This is my quick idea how to draw cards on the beginning of the game.
+This is my 5 minute idea how to draw cards in the beginning of the game.
 
 <br>
 
